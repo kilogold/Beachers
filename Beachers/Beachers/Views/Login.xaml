@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Beachers.Views.Login"
+             Title="Login">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Entry Margin="20" Placeholder="Username" Text="kilogold" IsPassword="False" x:Name="username"/>
+            <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
+            <Button Margin="20" Text="Log In" Clicked="Button_Clicked"></Button>
+            <Label Text="" x:Name="loginOutcome"></Label>
+        <ListView x:Name="userList"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

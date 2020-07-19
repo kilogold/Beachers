@@ -1,0 +1,3 @@
+[submodule "firebase-authentication-dotnet"]
+	path = firebase-authentication-dotnet
+	url = https://github.com/step-up-labs/firebase-authentication-dotnet.git
