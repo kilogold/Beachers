@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1023872780093",
+    "firebase_url": "https://beachers-49bec.firebaseio.com",
+    "project_id": "beachers-49bec",
+    "storage_bucket": "beachers-49bec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023872780093:android:e734232902e4b56c832754",
+        "android_client_info": {
+          "package_name": "com.kelvin.Beachers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023872780093-gcig24h77jl888979runi4u748sh6sgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC_klticmn1LrAAyd65DP4ZrfhQXtGr40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023872780093-gcig24h77jl888979runi4u748sh6sgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

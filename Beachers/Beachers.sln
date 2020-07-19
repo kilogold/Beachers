@@ -9,10 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beachers.iOS", "Beachers.iO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beachers", "Beachers\Beachers.csproj", "{03297546-88E0-420C-9813-574FEE92D401}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebase", "..\firebase-database-dotnet\src\Firebase\Firebase.csproj", "{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebase.Auth", "..\firebase-authentication-dotnet\src\Firebase.Auth\Firebase.Auth.csproj", "{40761C19-071E-4160-AEFD-87C16737499E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,30 +73,6 @@ Global
 		{03297546-88E0-420C-9813-574FEE92D401}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{03297546-88E0-420C-9813-574FEE92D401}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{03297546-88E0-420C-9813-574FEE92D401}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Release|iPhone.Build.0 = Release|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{8BAB36C0-531C-4D8B-9913-0313D5BB14AA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Release|iPhone.Build.0 = Release|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{40761C19-071E-4160-AEFD-87C16737499E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,11 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\firebase-authentication-dotnet\src\Firebase.Auth\Firebase.Auth.csproj" />
-    <ProjectReference Include="..\..\firebase-database-dotnet\src\Firebase\Firebase.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Views\Booking.xaml.cs">
       <DependentUpon>Booking.xaml</DependentUpon>
     </Compile>

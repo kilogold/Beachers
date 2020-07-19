@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -22,6 +21,10 @@ namespace Beachers.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            // Loading tutorial:
+            // https://www.lindseybroos.be/2020/03/xamarin-forms-and-firebase-authentication/
+            Firebase.Core.App.Configure();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
