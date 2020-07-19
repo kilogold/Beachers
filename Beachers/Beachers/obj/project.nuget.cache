@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EwVYc2yfA1upADxxVi1tFA5w9xc1501pwkXlKg11UNd9NyGGwDhwwVi7jd2G2UveK5yTk2TMwHLyImfURPbv0A==",
+  "dgSpecHash": "GZRuJ/5Kzq5fWMDwYbUYybzFhoIB4fb8OKL7L0XiEDx+hM53rJS43R9zq2kQust+Hbfafo3cFvPWqACasLd73Q==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj",
+  "projectFilePath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kelvin\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

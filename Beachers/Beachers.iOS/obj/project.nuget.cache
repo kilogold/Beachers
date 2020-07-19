@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hk2fRse27wtcFDNjlzBlx2p5sS4tOG2uYx5N9Pvl+Fx011hEMIiArb/vAB/1cayqnlcOXiHPyKGsbrIR0gSEVg==",
+  "dgSpecHash": "WaZc/99B3GoVtN/Hz9AmS97bEZRCi5ZK6gzMTb3aPRAbHx8Edw60CMZbQtWi6XKFnc9NslkdACPTB3Sid2Nv/A==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
+  "projectFilePath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kelvin\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\Kelvin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",

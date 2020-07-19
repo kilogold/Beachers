@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Beachers.Views.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Margin="20" Placeholder="First Name" Text="Alex" IsPassword="False" x:Name="fName"/>
+            <Entry Margin="20" Placeholder="Last Name" Text="Bonilla" IsPassword="False" x:Name="lName"/>
+            <Entry Margin="20" Placeholder="Phone Number" Text="7876476857" IsPassword="False" x:Name="phone"/>
+            <Entry Margin="20" Placeholder="Email" Text="goa@aol.com" IsPassword="False" x:Name="email"/>
+            <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
+            <Button Margin="20" Text="Register" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

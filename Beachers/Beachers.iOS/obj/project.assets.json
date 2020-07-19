@@ -1633,11 +1633,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
+      "projectUniqueName": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
       "projectName": "Beachers.iOS",
-      "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
+      "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
       "packagesPath": "C:\\Users\\Kelvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\obj\\",
+      "outputPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1658,8 +1658,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj": {
-              "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj"
+            "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj": {
+              "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj"
             }
           }
         }

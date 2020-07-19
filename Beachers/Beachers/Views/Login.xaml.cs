@@ -34,14 +34,22 @@ namespace Beachers.Views
         /// </summary>
         private async void Do()
         {
-
             //////////////////////AUTH//////////////////////////
             const string firebaseAPIkey = "AIzaSyA2JHpohpCz_412DdeaWqUaNKxaziRvV1g";
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(firebaseAPIkey));
 
-            var facebookAccessToken = "<login with facebook and get oauth access token>";
+            FirebaseAuthLink auth = null;
+            try
+            {
+                auth = await authProvider.SignInWithEmailAndPasswordAsync(email.Text, password.Text);
 
-            var auth = await authProvider.SignInWithOAuthAsync(FirebaseAuthType.Facebook, facebookAccessToken);
+            }catch(FirebaseAuthException ex)
+            {
+                Console.WriteLine(ex.Reason);
+                return;
+            }
+
+
             DatabaseAccess db = new DatabaseAccess(auth.FirebaseToken);
 
 
@@ -55,7 +63,7 @@ namespace Beachers.Views
             DatabaseAccess db = new DatabaseAccess("");
 
             var hasher = MD5.Create();
-            var md5Input = $"{username.Text}{password.Text}";
+            var md5Input = $"{email.Text}{password.Text}";
             var credentials = Encoding.ASCII.GetBytes(md5Input);
             var userHashBytes = hasher.ComputeHash(credentials);
             var userHashString = Encoding.ASCII.GetString(userHashBytes);

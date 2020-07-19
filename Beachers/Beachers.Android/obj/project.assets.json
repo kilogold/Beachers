@@ -2305,11 +2305,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Xamarin\\Beachers\\Beachers.Android\\Beachers.Android.csproj",
+      "projectUniqueName": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.Android\\Beachers.Android.csproj",
       "projectName": "Beachers.Android",
-      "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.Android\\Beachers.Android.csproj",
+      "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.Android\\Beachers.Android.csproj",
       "packagesPath": "C:\\Users\\Kelvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.Android\\obj\\",
+      "outputPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2330,8 +2330,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj": {
-              "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj"
+            "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj": {
+              "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj"
             }
           }
         }

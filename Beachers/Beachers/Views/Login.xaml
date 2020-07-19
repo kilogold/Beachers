@@ -8,7 +8,7 @@
              Title="Login">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Entry Margin="20" Placeholder="Username" Text="kilogold" IsPassword="False" x:Name="username"/>
+            <Entry Margin="20" Placeholder="Email" Text="kilogold" IsPassword="False" x:Name="email"/>
             <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
             <Button Margin="20" Text="Log In" Clicked="Button_Clicked"></Button>
             <Label Text="" x:Name="loginOutcome"></Label>

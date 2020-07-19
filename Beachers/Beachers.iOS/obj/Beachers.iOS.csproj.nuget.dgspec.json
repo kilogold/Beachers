@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj": {}
+    "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj": {
+    "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
+        "projectUniqueName": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
         "projectName": "Beachers.iOS",
-        "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
+        "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\Beachers.iOS.csproj",
         "packagesPath": "C:\\Users\\Kelvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers.iOS\\obj\\",
+        "outputPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj": {
-                "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj"
+              "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj": {
+                "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj": {
+    "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj",
+        "projectUniqueName": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj",
         "projectName": "Beachers",
-        "projectPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\Beachers.csproj",
+        "projectPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\Beachers.csproj",
         "packagesPath": "C:\\Users\\Kelvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Xamarin\\Beachers\\Beachers\\obj\\",
+        "outputPath": "C:\\Projects\\BeachersSuite\\Beachers\\Beachers\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -93,11 +93,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Projects\\Xamarin\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj": {
-                "projectPath": "C:\\Projects\\Xamarin\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj"
+              "C:\\Projects\\BeachersSuite\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj": {
+                "projectPath": "C:\\Projects\\BeachersSuite\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj"
               },
-              "C:\\Projects\\Xamarin\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj": {
-                "projectPath": "C:\\Projects\\Xamarin\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj"
+              "C:\\Projects\\BeachersSuite\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj": {
+                "projectPath": "C:\\Projects\\BeachersSuite\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj"
               }
             }
           }
@@ -140,14 +140,14 @@
         }
       }
     },
-    "C:\\Projects\\Xamarin\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj": {
+    "C:\\Projects\\BeachersSuite\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj": {
       "version": "3.4.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Xamarin\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj",
+        "projectUniqueName": "C:\\Projects\\BeachersSuite\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj",
         "projectName": "FirebaseAuthentication.net",
-        "projectPath": "C:\\Projects\\Xamarin\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj",
+        "projectPath": "C:\\Projects\\BeachersSuite\\firebase-authentication-dotnet\\src\\Firebase.Auth\\Firebase.Auth.csproj",
         "packagesPath": "C:\\Users\\Kelvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Xamarin\\firebase-authentication-dotnet\\src\\Firebase.Auth\\obj\\",
+        "outputPath": "C:\\Projects\\BeachersSuite\\firebase-authentication-dotnet\\src\\Firebase.Auth\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -193,14 +193,14 @@
         }
       }
     },
-    "C:\\Projects\\Xamarin\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj": {
+    "C:\\Projects\\BeachersSuite\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj": {
       "version": "4.0.4",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Xamarin\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj",
+        "projectUniqueName": "C:\\Projects\\BeachersSuite\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj",
         "projectName": "FirebaseDatabase.net",
-        "projectPath": "C:\\Projects\\Xamarin\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj",
+        "projectPath": "C:\\Projects\\BeachersSuite\\firebase-database-dotnet\\src\\Firebase\\Firebase.csproj",
         "packagesPath": "C:\\Users\\Kelvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Xamarin\\firebase-database-dotnet\\src\\Firebase\\obj\\",
+        "outputPath": "C:\\Projects\\BeachersSuite\\firebase-database-dotnet\\src\\Firebase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
