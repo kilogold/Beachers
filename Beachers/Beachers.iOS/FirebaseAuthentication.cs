@@ -11,6 +11,11 @@ namespace Beachers.iOS
 {
     public class FirebaseAuthentication : IFirebaseAuthentication
     {
+        public string UserID
+        {
+            get { return Auth.DefaultInstance.CurrentUser.Uid; }
+        }
+
         public bool IsSignIn()
         {
             var user = Auth.DefaultInstance.CurrentUser;

@@ -7,6 +7,11 @@ namespace Beachers.Droid
 {
     public class FirebaseAuthentication : IFirebaseAuthentication
     {
+        public string UserID
+        {
+            get { return Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid; }
+        }
+
         public bool IsSignIn()
         {
             var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;

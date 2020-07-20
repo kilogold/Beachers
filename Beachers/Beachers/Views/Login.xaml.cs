@@ -29,7 +29,7 @@ namespace Beachers.Views
         {
             loginOutcome.Text = null;
 
-            string token = await auth.LoginWithEmailAndPassword(email.Text,password.Text);
+            string token = await auth.LoginWithEmailAndPassword(email.Text, password.Text);
             if (token != string.Empty)
             {
                 Application.Current.MainPage = new MainPage();
@@ -39,69 +39,5 @@ namespace Beachers.Views
                 await DisplayAlert("Authentication Failed", "Email or password are incorrect. Try again!", "OK");
             }
         }
-
-        /// <summary>
-        /// This logic goes in ModelView
-        /// </summary>
-        //private async void Do()
-        //{
-        //    ////////////////////////AUTH//////////////////////////
-        //    //const string firebaseAPIkey = "AIzaSyA2JHpohpCz_412DdeaWqUaNKxaziRvV1g";
-        //    //var authProvider = new FirebaseAuthProvider(new FirebaseConfig(firebaseAPIkey));
-
-        //    //FirebaseAuthLink auth = null;
-        //    //try
-        //    //{
-        //    //    auth = await authProvider.SignInWithEmailAndPasswordAsync(email.Text, password.Text);
-
-        //    //}catch(FirebaseAuthException ex)
-        //    //{
-        //    //    Console.WriteLine(ex.Reason);
-        //    //    return;
-        //    //}
-
-
-        //    //DatabaseAccess db = new DatabaseAccess(auth.FirebaseToken);
-
-
-
-        //    //////////////////////DBACCESS//////////////////////////
-
-        //}
-
-        //private async void KelvinsAuth()
-        //{
-        //    DatabaseAccess db = new DatabaseAccess();
-
-        //    var hasher = MD5.Create();
-        //    var md5Input = $"{email.Text}{password.Text}";
-        //    var credentials = Encoding.ASCII.GetBytes(md5Input);
-        //    var userHashBytes = hasher.ComputeHash(credentials);
-        //    var userHashString = Encoding.ASCII.GetString(userHashBytes);
-
-        //    StringBuilder sb = new StringBuilder();
-        //    for (int i = 0; i < userHashBytes.Length; i++)
-        //    {
-        //        sb.Append(userHashBytes[i].ToString("X2"));
-        //    }
-
-        //    //Models.User allPersons = await db.GetUser(sb.ToString().ToLower());
-
-        //    MainThread.BeginInvokeOnMainThread(() =>
-        //    {
-        //        bool loggedIn = true; //(allPersons != null);
-
-        //        if (loggedIn)
-        //        {
-        //            Navigation.PushAsync(new Booking());
-
-        //        }
-        //        else
-        //        {
-        //            loginOutcome.Text = "Try again...";
-        //        }
-        //    });
-
-        //}
     }
 }

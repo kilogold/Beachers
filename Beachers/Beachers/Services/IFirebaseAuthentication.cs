@@ -10,5 +10,7 @@ namespace Beachers.Services
         Task<string> LoginWithEmailAndPassword(string email, string password);
         bool SignOut();
         bool IsSignIn();
+
+        string UserID { get; }
     }
 }
