@@ -16,6 +16,11 @@ namespace Beachers.iOS
             get { return Auth.DefaultInstance.CurrentUser.Uid; }
         }
 
+        public string UserFirstName
+        {
+            get { return Auth.DefaultInstance.CurrentUser.DisplayName; }
+        }
+
         public bool IsSignIn()
         {
             var user = Auth.DefaultInstance.CurrentUser;

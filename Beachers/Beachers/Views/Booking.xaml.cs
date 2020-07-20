@@ -24,7 +24,7 @@ namespace Beachers.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            string userAlias = auth.UserID;
+            string userAlias = auth.UserFirstName;
             lblWelcome.Text = $"Welcome, {userAlias}!";
         }
     }

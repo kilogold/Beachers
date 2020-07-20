@@ -8,9 +8,13 @@ namespace Beachers.Services
     public interface IFirebaseAuthentication
     {
         Task<string> LoginWithEmailAndPassword(string email, string password);
+        Task<string> RegisterWithEmailAndPassword(string email, string password);
+        Task UpateProfile(string displayName, string photoURI);
+
         bool SignOut();
         bool IsSignIn();
 
         string UserID { get; }
+        string UserFirstName { get; }
     }
 }

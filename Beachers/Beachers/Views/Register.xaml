@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Beachers.Views.Register">
+             x:Class="Beachers.Views.Register"
+             Title="Register">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
@@ -15,7 +16,7 @@
             <Entry Margin="20" Placeholder="Phone Number" Text="7876476857" IsPassword="False" x:Name="phone"/>
             <Entry Margin="20" Placeholder="Email" Text="goa@aol.com" IsPassword="False" x:Name="email"/>
             <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
-            <Button Margin="20" Text="Register" Clicked="Button_Clicked"></Button>
+            <Button Margin="20" Text="Register" Clicked="Button_Clicked" x:Name="btnRegister"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

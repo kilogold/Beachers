@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Beachers.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,15 @@ namespace Beachers.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-
+            btnRegister.IsEnabled = false;
+            var auth = DependencyService.Get<IFirebaseAuthentication>();
+            await auth.RegisterWithEmailAndPassword(email.Text, password.Text);
+            await auth.UpateProfile(fName.Text, null);
+            btnRegister.IsEnabled = true;
+            await DisplayAlert("Registration Successful!", "Please log in with your exiting account.", "OK");
+            await Navigation.PopAsync();
         }
     }
 }

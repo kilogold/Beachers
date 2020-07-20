@@ -27,8 +27,6 @@ namespace Beachers.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            loginOutcome.Text = null;
-
             string token = await auth.LoginWithEmailAndPassword(email.Text, password.Text);
             if (token != string.Empty)
             {
@@ -38,6 +36,12 @@ namespace Beachers.Views
             {
                 await DisplayAlert("Authentication Failed", "Email or password are incorrect. Try again!", "OK");
             }
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            var navigationPage = new NavigationPage(new Register());
+            Navigation.PushAsync(navigationPage);
         }
     }
 }
