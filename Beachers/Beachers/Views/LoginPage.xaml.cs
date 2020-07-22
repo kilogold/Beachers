@@ -1,7 +1,5 @@
 ﻿using Beachers.Models;
 using Beachers.Services;
-//using Firebase.Auth;
-//using Firebase.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +23,7 @@ namespace Beachers.Views
             auth = DependencyService.Get<IFirebaseAuthentication>();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Login(object sender, EventArgs e)
         {
             string token = await auth.LoginWithEmailAndPassword(email.Text, password.Text);
             if (token != string.Empty)
@@ -38,9 +36,15 @@ namespace Beachers.Views
             }
         }
 
-        private void Button_Clicked_1(object sender, EventArgs e)
+        private void Button_Register(object sender, EventArgs e)
         {
             var navigationPage = new NavigationPage(new RegisterPage());
+            Navigation.PushAsync(navigationPage);
+        }
+
+        private void Button_ForgotPassword(object sender, EventArgs e)
+        {
+            var navigationPage = new NavigationPage(new ForgotPasswordPage());
             Navigation.PushAsync(navigationPage);
         }
     }

@@ -10,6 +10,7 @@ namespace Beachers.Services
         Task<string> LoginWithEmailAndPassword(string email, string password);
         Task<string> RegisterWithEmailAndPassword(string email, string password);
         Task UpateProfile(string displayName, string photoURI);
+        void ResetPassword(string email);
 
         bool SignOut();
         bool IsSignIn();

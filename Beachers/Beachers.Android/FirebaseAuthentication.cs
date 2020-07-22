@@ -97,5 +97,10 @@ namespace Beachers.Droid
                 return false;
             }
         }
+
+        public void ResetPassword(string email)
+        {
+            Firebase.Auth.FirebaseAuth.Instance.SendPasswordResetEmailAsync(email);
+        }
     }
 }
