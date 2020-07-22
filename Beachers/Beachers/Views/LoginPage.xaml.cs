@@ -40,7 +40,7 @@ namespace Beachers.Views
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            var navigationPage = new NavigationPage(new Register());
+            var navigationPage = new NavigationPage(new RegisterPage());
             Navigation.PushAsync(navigationPage);
         }
     }

@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace Beachers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Booking : ContentPage
+    public partial class BookingPage : ContentPage
     {
         IFirebaseAuthentication auth;
 
-        public Booking()
+        public BookingPage()
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuthentication>();

@@ -35,7 +35,7 @@ namespace Beachers.Views
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
                     case (int)MenuItemType.Booking:
-                        MenuPages.Add(id, new NavigationPage(new Booking()));
+                        MenuPages.Add(id, new NavigationPage(new BookingPage()));
                         break;
                     case (int)MenuItemType.Login:
                         MenuPages.Add(id, new NavigationPage(new Login()));

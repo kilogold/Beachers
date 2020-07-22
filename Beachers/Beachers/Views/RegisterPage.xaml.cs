@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace Beachers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Register : ContentPage
+    public partial class RegisterPage : ContentPage
     {
-        public Register()
+        public RegisterPage()
         {
             InitializeComponent();
         }
