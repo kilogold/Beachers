@@ -33,6 +33,16 @@ namespace Beachers.iOS
             return await user.User.GetIdTokenAsync();
         }
 
+        public Task<string> RegisterWithEmailAndPassword(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ResetPassword(string email)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool SignOut()
         {
             try
@@ -44,6 +54,11 @@ namespace Beachers.iOS
             {
                 return false;
             }
+        }
+
+        public Task UpateProfile(string displayName, string photoURI)
+        {
+            throw new NotImplementedException();
         }
     }
 }

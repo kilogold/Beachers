@@ -9,7 +9,8 @@ namespace Beachers.Models
         Browse,
         About,
         Booking,
-        Login
+        Login,
+        Logout
     }
     public class HomeMenuItem
     {

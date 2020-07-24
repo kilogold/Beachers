@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Beachers.Models;
+using Beachers.Services;
 
 namespace Beachers.Views
 {
@@ -37,9 +38,11 @@ namespace Beachers.Views
                     case (int)MenuItemType.Booking:
                         MenuPages.Add(id, new NavigationPage(new BookingPage()));
                         break;
-                    case (int)MenuItemType.Login:
+                    case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new Login()));
-                        break;
+                        DependencyService.Get<IFirebaseAuthentication>().SignOut();
+                        Application.Current.MainPage = new Login();
+                        return;
                 }
             }
 

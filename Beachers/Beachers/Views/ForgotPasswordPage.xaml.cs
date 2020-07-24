@@ -19,6 +19,8 @@ namespace Beachers.Views
             auth.ResetPassword(email.Text);
 
             await DisplayAlert("Reset Request Sent", $"Password reset link has been sent to {email.Text}.\nPlease check your inbox for further instructions." , "OK");
+
+            await Navigation.PopAsync();
         }
     }
 }
