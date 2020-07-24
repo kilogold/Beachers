@@ -10,11 +10,19 @@
             <StackLayout VerticalOptions="Start">
                 <Entry Margin="20" Placeholder="Email" Text="kelvin@ramenvr.com" IsPassword="False" x:Name="email"/>
                 <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
+            <StackLayout Margin="20" Orientation="Horizontal">
+                <CheckBox x:Name="chkRememberMe"/>
+                <Label Text="Remember Me" FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
                 <Button Margin="20" Text="Log In" Clicked="Button_Login"/>
                 <Button Margin="20" Text="Forgot Password" Clicked="Button_ForgotPassword"/>
             </StackLayout>
-            <StackLayout VerticalOptions="EndAndExpand">
-                <Button Margin="20" Text="Register" VerticalOptions="End" Clicked="Button_Register"/>
-            </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Button Margin="20" Text="Register" VerticalOptions="End" Clicked="Button_Register"/>
         </StackLayout>
+    </StackLayout>
 </ContentPage>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,6 +22,17 @@ namespace Beachers.Views
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuthentication>();
+            chkRememberMe.IsChecked = true;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if(chkRememberMe.IsChecked && !string.IsNullOrWhiteSpace(email.Text) && !string.IsNullOrWhiteSpace(password.Text) )
+            {
+                Button_Login(this, null);
+            }
         }
 
         private async void Button_Login(object sender, EventArgs e)
@@ -46,6 +58,11 @@ namespace Beachers.Views
         {
             var navigationPage = new NavigationPage(new ForgotPasswordPage());
             Navigation.PushAsync(navigationPage);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            chkRememberMe.IsChecked = !chkRememberMe.IsChecked;
         }
     }
 }
