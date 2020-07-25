@@ -8,9 +8,18 @@
              Title="Booking">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lblWelcome" Text="Welcome to Xamarin.Forms!"
+
+            <Label x:Name="lblWelcome" Text="Reservations"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="lstReservations">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Item 1</x:String>
+                        <x:String>Item 2</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

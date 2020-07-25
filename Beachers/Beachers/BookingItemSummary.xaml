@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Beachers.BookingItemSummary">
+    <ContentPage.Content>
+        <!--<maps:Map MapType="Street" />-->
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Label Text="Date" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Aug. 24, 2020" FontSize="20" Margin="20"/>
+            <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Deployments" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
