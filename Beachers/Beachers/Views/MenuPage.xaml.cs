@@ -20,7 +20,7 @@ namespace Beachers.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+                //new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Booking, Title="Booking" },
                 new HomeMenuItem {Id = MenuItemType.Logout, Title="Log Out" },

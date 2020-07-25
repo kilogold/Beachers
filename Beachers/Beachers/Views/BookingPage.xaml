@@ -8,18 +8,14 @@
              Title="Booking">
     <ContentPage.Content>
         <StackLayout>
+            <!--<Label x:Name="lblWelcome" Text="Reservations" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" />-->
 
-            <Label x:Name="lblWelcome" Text="Reservations"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <ListView x:Name="lstReservations">
-                <d:ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Item 1</x:String>
-                        <x:String>Item 2</x:String>
-                    </x:Array>
-                </d:ListView.ItemsSource>
-            </ListView>
+            <Label Text="08/24/2020" FontSize="20">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Btn_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

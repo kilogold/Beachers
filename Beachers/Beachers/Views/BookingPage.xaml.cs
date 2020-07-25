@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 namespace Beachers.Views
@@ -17,12 +17,9 @@ namespace Beachers.Views
             InitializeComponent();
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    var auth = DependencyService.Get<IFirebaseAuthentication>();
-        //    base.OnAppearing();
-        //    string userAlias = auth.UserFirstName;
-        //    lblWelcome.Text = $"Welcome, {userAlias}!";
-        //}
+        private void Btn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NavigationPage(new BookingItemSummary()));
+        }
     }
 }

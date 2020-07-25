@@ -23,7 +23,7 @@ namespace Beachers.Views
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuthentication>();
-            chkRememberMe.IsChecked = true;
+
             this.honorAutoLogin = honorAutoLogin;
         }
 
