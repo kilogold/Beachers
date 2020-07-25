@@ -39,9 +39,8 @@ namespace Beachers.Views
                         MenuPages.Add(id, new NavigationPage(new BookingPage()));
                         break;
                     case (int)MenuItemType.Logout:
-                        MenuPages.Add(id, new NavigationPage(new Login()));
                         DependencyService.Get<IFirebaseAuthentication>().SignOut();
-                        Application.Current.MainPage = new Login();
+                        Application.Current.MainPage = new NavigationPage(new Login(false));
                         return;
                 }
             }

@@ -14,7 +14,7 @@ namespace Beachers
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new Login(true));
         }
 
         protected override void OnStart()

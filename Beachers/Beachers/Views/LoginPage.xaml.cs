@@ -16,20 +16,22 @@ namespace Beachers.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
-        IFirebaseAuthentication auth;
+        private IFirebaseAuthentication auth;
+        private bool honorAutoLogin = false;
 
-        public Login()
+        public Login(bool honorAutoLogin)
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuthentication>();
             chkRememberMe.IsChecked = true;
+            this.honorAutoLogin = honorAutoLogin;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if(chkRememberMe.IsChecked && !string.IsNullOrWhiteSpace(email.Text) && !string.IsNullOrWhiteSpace(password.Text) )
+            if(honorAutoLogin && chkRememberMe.IsChecked && !string.IsNullOrWhiteSpace(email.Text) && !string.IsNullOrWhiteSpace(password.Text) )
             {
                 Button_Login(this, null);
             }
