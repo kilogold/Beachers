@@ -11,10 +11,12 @@
             <Label Text="Date" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
             <Label Text="Aug. 24, 2020" FontSize="20" Margin="20"/>
             <Label Text="Deployments" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
-            <BoxView HeightRequest="8" Color="Black"/>
+            <ListView>
+                
+            </ListView>
             <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
             <StackLayout>
-                <maps:Map MapType="Street" HeightRequest="340"/>
+                <maps:Map MapType="Street" HeightRequest="340" x:Name="map"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
