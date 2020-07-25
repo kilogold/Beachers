@@ -9,11 +9,26 @@
     <ContentPage.Content>
         <StackLayout Padding="20, 10"  Grid.Row="0" x:Name="listviewname">
             <Label Text="Date" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-            <Label Text="Aug. 24, 2020" FontSize="20" Margin="20"/>
+            <Label Text="Aug. 24, 2020" FontSize="20" Margin="15"/>
             <Label Text="Deployments" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
-            <ListView>
-                
+            <ListView
+                   ItemsSource="{Binding GearList}"
+                   IsGroupingEnabled="true" >
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                              TextColor="#f35e20"
+                              DetailColor="#503026" />
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding type}" Detail="{Binding detail}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
+            <Label Text="Session Length" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
+            <Label Text="2hr 45min (12:00pm-2:45pm PST) " FontSize="20" Margin="15"/>
             <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
             <StackLayout>
                 <maps:Map MapType="Street" HeightRequest="340" x:Name="map"/>

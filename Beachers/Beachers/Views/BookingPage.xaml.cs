@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-//using Xamarin.Forms.Maps;
 namespace Beachers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -16,14 +15,6 @@ namespace Beachers.Views
         public BookingPage()
         {
             InitializeComponent();
-
-            string[] reservationBtns = new string[100];
-            for (int i = 0; i < 100; i++)
-            {
-                reservationBtns[i] = $"Btn{i}";
-            }
-
-            lstReservations.ItemsSource = reservationBtns;
         }
 
         //protected override void OnAppearing()
