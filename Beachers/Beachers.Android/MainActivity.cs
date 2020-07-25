@@ -21,10 +21,13 @@ namespace Beachers.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.Forms.DependencyService.Register<FirebaseAuthentication>();
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
 
             // Loading tutorial:
             // https://www.lindseybroos.be/2020/03/xamarin-forms-and-firebase-authentication/
             FirebaseApp.InitializeApp(Application.Context);
+
+
 
             LoadApplication(new App());
         }
