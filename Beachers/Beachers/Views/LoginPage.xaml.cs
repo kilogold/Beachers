@@ -14,12 +14,12 @@ using Xamarin.Forms.Xaml;
 namespace Beachers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class LoginPage : ContentPage
     {
         private IFirebaseAuthentication auth;
         private bool honorAutoLogin = false;
 
-        public Login(bool honorAutoLogin)
+        public LoginPage(bool honorAutoLogin)
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuthentication>();

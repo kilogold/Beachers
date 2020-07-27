@@ -12,14 +12,41 @@ namespace Beachers.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingPage : ContentPage
     {
+
+        const int TotalBooking = 40;
+        List<BookingModel> bookings = new List<BookingModel>(TotalBooking);
+
+
         public BookingPage()
         {
             InitializeComponent();
+
+            for (int i = 0; i < TotalBooking; i++)
+            {
+                bookings.Add(new BookingModel("08/24/1989"));
+            }
+
+            lstBookings.ItemsSource = bookings;
+            lstBookings.ItemSelected += OnItemSelected;
         }
 
-        private void Btn_Clicked(object sender, EventArgs e)
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (lstBookings.SelectedItem == null)
+                return;
+            
             Navigation.PushAsync(new NavigationPage(new BookingItemSummary()));
+
+            lstBookings.SelectedItem = null;
         }
+    }
+
+    public class BookingModel
+    {
+        public BookingModel(string date)
+        {
+            Date = date;
+        }
+        public string Date { get; }
     }
 }

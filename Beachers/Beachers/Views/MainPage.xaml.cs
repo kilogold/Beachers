@@ -40,7 +40,7 @@ namespace Beachers.Views
                         break;
                     case (int)MenuItemType.Logout:
                         DependencyService.Get<IFirebaseAuthentication>().SignOut();
-                        Application.Current.MainPage = new NavigationPage(new Login(false));
+                        Application.Current.MainPage = new NavigationPage(new LoginPage(false));
                         return;
                 }
             }

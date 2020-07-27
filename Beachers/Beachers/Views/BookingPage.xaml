@@ -8,14 +8,13 @@
              Title="Booking">
     <ContentPage.Content>
         <StackLayout>
-            <!--<Label x:Name="lblWelcome" Text="Reservations" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" />-->
-
-            <Label Text="08/24/2020" FontSize="20">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Btn_Clicked"/>
-                </Label.GestureRecognizers>
-            </Label>
-
+            <ListView x:Name="lstBookings">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Date}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
