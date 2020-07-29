@@ -26,8 +26,7 @@ namespace Beachers.Droid
             // Loading tutorial:
             // https://www.lindseybroos.be/2020/03/xamarin-forms-and-firebase-authentication/
             FirebaseApp.InitializeApp(Application.Context);
-
-
+            FirebaseDB.Test();
 
             LoadApplication(new App());
         }
