@@ -14,7 +14,7 @@ namespace Beachers.Views
     {
 
         const int TotalBooking = 40;
-        List<BookingModel> bookings = new List<BookingModel>(TotalBooking);
+        List<BookingModelProto> bookings = new List<BookingModelProto>(TotalBooking);
 
 
         public BookingPage()
@@ -23,7 +23,7 @@ namespace Beachers.Views
 
             for (int i = 0; i < TotalBooking; i++)
             {
-                bookings.Add(new BookingModel("08/24/1989"));
+                bookings.Add(new BookingModelProto("08/24/1989"));
             }
 
             lstBookings.ItemsSource = bookings;
@@ -41,9 +41,9 @@ namespace Beachers.Views
         }
     }
 
-    public class BookingModel
+    public class BookingModelProto
     {
-        public BookingModel(string date)
+        public BookingModelProto(string date)
         {
             Date = date;
         }

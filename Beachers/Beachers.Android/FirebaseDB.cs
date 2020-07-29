@@ -11,22 +11,22 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Beachers.Models;
+using Beachers.Services;
 using Firebase.Database;
 
 namespace Beachers.Droid
 {
-    public class BookingModel
-    {
-        public string beacherId;
-        public string[] gear;
-        public int[][] deployments;
-        public int sessionLengthMinutes;
-        public float[] location;
-    }
-
+    using BookingRecords = Dictionary<string, BookingModel>;
+    
     public class BookingModelEventListener : Java.Lang.Object, IValueEventListener
     {
-        Dictionary<string, BookingModel> data = new Dictionary<string, BookingModel>();
+        private Action<BookingRecords> updatedModelCallback;
+        public BookingModelEventListener(Action<BookingRecords> updatedCallback)
+        {
+            updatedModelCallback = updatedCallback;
+        }
+
         public void OnCancelled(DatabaseError error)
         {
             Log.Warn("Beachers", "Failed to read value:", error.ToException());
@@ -34,10 +34,14 @@ namespace Beachers.Droid
 
         public void OnDataChange(DataSnapshot snapshot)
         {
+            BookingRecords data = new BookingRecords();
+
             foreach (DataSnapshot timestamp in snapshot.Children.ToEnumerable())
             {
                 data.Add(timestamp.Key, ParseBooking(timestamp));
             }
+
+            updatedModelCallback.Invoke(data);
         }
 
         private BookingModel ParseBooking(DataSnapshot bookingElements)
@@ -65,7 +69,7 @@ namespace Beachers.Droid
 
                 if (item.Key == "lengthMinutes")
                 {
-                    model.sessionLengthMinutes = (int)item.Value;
+                    model.sessionLengthMinutes = (int)(item.GetValue(Java.Lang.Class.FromType(typeof(Java.Lang.Long))));
                     continue;
                 }
 
@@ -113,20 +117,27 @@ namespace Beachers.Droid
         }
     }
 
-    class FirebaseDB
+
+
+    public class FirebaseDB : IFirebaseDB
     {
-        static DatabaseReference booking;
-        static BookingModelEventListener userListener;
-        public static void Test()
+        /// <summary>
+        /// Although DatabaseReference keeps track of listeners, there's no way to 
+        /// </summary>
+        Dictionary<object, BookingModelEventListener> bookingModelEventListeners;
+
+        //Only supports booking atm...
+        public void RegisterBookingsListener(object sender, Action<BookingRecords> updateCallback)
         {
-            
-            var root = Firebase.Database.FirebaseDatabase.Instance.GetReferenceFromUrl("https://beachers-49bec.firebaseio.com/");
+            BookingModelEventListener bookingsListener = new BookingModelEventListener(updateCallback);
+            GetCurrentUserBookings().AddValueEventListener(bookingsListener);
+        }
+
+        private DatabaseReference GetCurrentUserBookings()
+        {
             string userID = Xamarin.Forms.DependencyService.Get<Services.IFirebaseAuthentication>().UserID;
-            booking = root.Child("Booking").Child(userID);
-
-            userListener = new BookingModelEventListener();
-
-            booking.AddListenerForSingleValueEvent(userListener);
+            var bookingsRoot = FirebaseDatabase.Instance.GetReferenceFromUrl($"https://beachers-49bec.firebaseio.com/Booking/{userID}/");
+            return bookingsRoot;
         }
     }
 }

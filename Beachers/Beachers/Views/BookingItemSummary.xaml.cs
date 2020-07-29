@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Beachers.Models;
+using Beachers.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +15,13 @@ using Xamarin.Forms.Xaml;
 namespace Beachers
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BookingItemSummary : ContentPage
+    public partial class BookingItemSummary : ContentPage, INotifyPropertyChanged
     {
+        private void OnBookingModelUpdated(Dictionary<string, BookingModel> updatedModel)
+        {
+            lblMins.Text = updatedModel.Values.First().sessionLengthMinutes.ToString(); // just to test.
+        }
+
         public ObservableCollection<Deployment> GearList { get; set; } = Deployment.All;
 
         public BookingItemSummary()
@@ -30,6 +38,9 @@ namespace Beachers
             map.Pins.Add(pin);
             map.MoveToRegion(MapSpan.FromCenterAndRadius(mapPosition, Distance.FromMiles(1)));
             BindingContext = this;
+
+            DependencyService.Get<IFirebaseDB>().RegisterBookingsListener(this, OnBookingModelUpdated);
+            lblMins.Text = "5";
         }
     }
 
