@@ -10,14 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace Beachers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BookingPage : ContentPage
+    public partial class BookingRecordsPage : ContentPage
     {
 
         const int TotalBooking = 40;
         List<BookingModelProto> bookings = new List<BookingModelProto>(TotalBooking);
 
 
-        public BookingPage()
+        public BookingRecordsPage()
         {
             InitializeComponent();
 

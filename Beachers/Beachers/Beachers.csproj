@@ -20,8 +20,8 @@
     <Compile Update="Views\BookingSummaryPage.xaml.cs">
       <DependentUpon>BookingSummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\BookingPage.xaml.cs">
-      <DependentUpon>BookingPage.xaml</DependentUpon>
+    <Compile Update="Views\BookingRecordsPage.xaml.cs">
+      <DependentUpon>BookingRecordsPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -35,7 +35,7 @@
     <EmbeddedResource Update="Views\BookingSummaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BookingPage.xaml">
+    <EmbeddedResource Update="Views\BookingRecordsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ForgotPasswordPage.xaml">

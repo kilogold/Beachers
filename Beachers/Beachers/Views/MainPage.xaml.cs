@@ -36,7 +36,7 @@ namespace Beachers.Views
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
                     case (int)MenuItemType.Booking:
-                        MenuPages.Add(id, new NavigationPage(new BookingPage()));
+                        MenuPages.Add(id, new NavigationPage(new BookingRecordsPage()));
                         break;
                     case (int)MenuItemType.Logout:
                         DependencyService.Get<IFirebaseAuthentication>().SignOut();
