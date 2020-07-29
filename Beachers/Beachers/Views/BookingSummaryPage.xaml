@@ -28,11 +28,10 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Label Text="Session Length" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
-            <Label Text="2hr 45min (12:00pm-2:45pm PST) " FontSize="20" Margin="15"/>
-            <Label x:Name="lblMins"/>
+            <Label Text="{Binding SessionLength}" FontSize="20" Margin="15"/>
             <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
             <StackLayout>
-                <maps:Map MapType="Street" HeightRequest="340" x:Name="map"/>
+                <ContentView Content="{Binding DeploymentMap}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

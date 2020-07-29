@@ -9,5 +9,7 @@ namespace Beachers.Services
     public interface IFirebaseDB
     {
         void RegisterBookingsListener(object sender, Action<BookingRecords> recs);
+
+        void RegisterBookingSummaryListener(object sender, Action<BookingModel> updateCallback, string bookingTimestamp);
     }
 }
