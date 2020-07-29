@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\BookingSummaryPage.xaml.cs">
+      <DependentUpon>BookingSummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\BookingPage.xaml.cs">
       <DependentUpon>BookingPage.xaml</DependentUpon>
     </Compile>
@@ -29,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\BookingItemSummary.xaml">
+    <EmbeddedResource Update="Views\BookingSummaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\BookingPage.xaml">

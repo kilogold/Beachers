@@ -15,7 +15,7 @@ using Xamarin.Forms.Xaml;
 namespace Beachers
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BookingItemSummary : ContentPage, INotifyPropertyChanged
+    public partial class BookingSummaryPage : ContentPage, INotifyPropertyChanged
     {
         private void OnBookingModelUpdated(Dictionary<string, BookingModel> updatedModel)
         {
@@ -24,7 +24,7 @@ namespace Beachers
 
         public ObservableCollection<Deployment> GearList { get; set; } = Deployment.All;
 
-        public BookingItemSummary()
+        public BookingSummaryPage()
         {
             InitializeComponent();
             var mapPosition = new Position(45.715979, -121.512101);

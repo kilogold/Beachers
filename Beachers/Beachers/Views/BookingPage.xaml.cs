@@ -35,7 +35,7 @@ namespace Beachers.Views
             if (lstBookings.SelectedItem == null)
                 return;
             
-            Navigation.PushAsync(new NavigationPage(new BookingItemSummary()));
+            Navigation.PushAsync(new NavigationPage(new BookingSummaryPage()));
 
             lstBookings.SelectedItem = null;
         }
