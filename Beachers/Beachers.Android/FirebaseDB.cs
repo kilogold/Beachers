@@ -146,10 +146,14 @@ namespace Beachers.Droid
         private const string urlFirebaseDB = "https://beachers-49bec.firebaseio.com";
 
         //Only supports booking atm...
-        public void RegisterBookingsListener(object sender, Action<BookingRecords> updateCallback)
+        public void RegisterBookingsListener(object sender, Action<BookingRecords> updateCallback, bool registerOnce)
         {
             BookingRecordsEventListener bookingsListener = new BookingRecordsEventListener(updateCallback);
-            GetCurrentUserBookings().AddValueEventListener(bookingsListener);
+
+            if(registerOnce)
+                GetCurrentUserBookings().AddListenerForSingleValueEvent(bookingsListener);
+            else
+                GetCurrentUserBookings().AddValueEventListener(bookingsListener);
         }
 
         public void RegisterBookingSummaryListener(object sender, Action<BookingModel> updateCallback, string bookingTimestamp)

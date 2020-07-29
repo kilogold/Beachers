@@ -1,4 +1,5 @@
-﻿using Beachers.Services;
+﻿using Beachers.Models;
+using Beachers.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,41 +13,27 @@ namespace Beachers.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingRecordsPage : ContentPage
     {
-
-        const int TotalBooking = 40;
-        List<BookingModelProto> bookings = new List<BookingModelProto>(TotalBooking);
-
-
         public BookingRecordsPage()
         {
             InitializeComponent();
-
-            for (int i = 0; i < TotalBooking; i++)
-            {
-                bookings.Add(new BookingModelProto("08/24/1989"));
-            }
-
-            lstBookings.ItemsSource = bookings;
+            var db = DependencyService.Get<IFirebaseDB>();
+            db.RegisterBookingsListener(this, something, true);
             lstBookings.ItemSelected += OnItemSelected;
+        }
+
+        private void something(Dictionary<string, BookingModel> obj)
+        {
+            lstBookings.ItemsSource = obj.Keys;
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (lstBookings.SelectedItem == null)
                 return;
-            
+
             Navigation.PushAsync(new NavigationPage(new BookingSummaryPage()));
 
             lstBookings.SelectedItem = null;
         }
-    }
-
-    public class BookingModelProto
-    {
-        public BookingModelProto(string date)
-        {
-            Date = date;
-        }
-        public string Date { get; }
     }
 }

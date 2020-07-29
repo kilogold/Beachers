@@ -5,16 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Beachers.Views.BookingRecordsPage"
-             Title="Booking">
+             Title="Bookings">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lstBookings">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Date}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <ListView x:Name="lstBookings"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
