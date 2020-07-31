@@ -11,5 +11,7 @@ namespace Beachers.Services
         void RegisterBookingsListener(object sender, Action<BookingRecords> recs, bool registerOnce);
 
         void RegisterBookingSummaryListener(object sender, Action<BookingModel> updateCallback, string bookingTimestamp);
+
+        void CreateNewBooking(string timestamp);
     }
 }

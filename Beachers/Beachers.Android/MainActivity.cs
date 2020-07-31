@@ -19,6 +19,7 @@ namespace Beachers.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.Forms.DependencyService.Register<FirebaseAuthentication>();
             Xamarin.Forms.DependencyService.Register<FirebaseDB>();

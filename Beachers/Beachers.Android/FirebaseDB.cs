@@ -162,6 +162,14 @@ namespace Beachers.Droid
             GetCurrentUserBookings().Child(bookingTimestamp).AddValueEventListener(bookingsListener);
         }
 
+        public void CreateNewBooking(string timestamp)
+        {
+            var bookings = GetCurrentUserBookings();
+            bookings.Child(timestamp).SetValue("Hello");
+        }
+
+
+
         private DatabaseReference GetCurrentUserBookings()
         {
             return FirebaseDatabase.Instance.GetReferenceFromUrl($"{urlFirebaseDB}/Booking/{FirebaseAuth.Instance.CurrentUser.Uid}/");
