@@ -12,42 +12,45 @@
         <vm:NewBookingViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Date" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Date" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
 
-            <DatePicker MinimumDate="{Binding MinDate}"
+                <DatePicker MinimumDate="{Binding MinDate}"
                         MaximumDate="{Binding MaxDate}"
                         Date="{Binding SelectedDate}" />
 
-            <Label Text="Session Start" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                <Label Text="Session Start" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
 
-            <TimePicker Time="{Binding SelectedTime}"/>
+                <TimePicker Time="{Binding SelectedTime}"/>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="25" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <StackLayout Grid.Column="0">
-                    <Label Text="Session End" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                    <TimePicker />
-                </StackLayout>
-                <StackLayout Grid.Column="2">
-                <Label Text="Session Length" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                    <Entry Keyboard="Numeric">
-                        <Entry.Behaviors>
-                            <local:NumericValidationBehavior />
-                        </Entry.Behaviors>
-                    </Entry>
-                </StackLayout>
-                <Label Grid.Column="1" Text="OR" TextDecorations="Underline"  VerticalTextAlignment="Top" HorizontalTextAlignment="Center"/>
-            </Grid>
-
-            <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-            <maps:Map x:Name="DeploymentMap" MapType="Hybrid"  HasScrollEnabled="False"/>
-            <StackLayout x:Name="layoutRadioButtons"/>
-            <Button Text="Confirm" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Clicked="Button_Clicked" />
-        </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
+                        <Label Text="Session End" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                        <TimePicker />
+                    </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <Label Text="Session Length" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                        <Entry Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <local:NumericValidationBehavior />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                    <Label Grid.Column="1" Text="OR" TextDecorations="Underline"  VerticalTextAlignment="Top" HorizontalTextAlignment="Center"/>
+                </Grid>
+                <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                <maps:Map x:Name="DeploymentMap" MapType="Hybrid"  HasScrollEnabled="False"/>
+                <StackLayout x:Name="layoutRadioButtons"/>
+                <Label Text="Gear" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                <StackLayout x:Name="layoutGearLoadout"/>
+                <Button Text="Confirm" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
