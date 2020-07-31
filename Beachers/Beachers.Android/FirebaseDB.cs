@@ -19,7 +19,8 @@ using Firebase.Database;
 namespace Beachers.Droid
 {
     using BookingRecords = Dictionary<string, BookingModel>;
-    
+    using GearRecords = Dictionary<string, GearModel>;
+
     static class BookingModelParser
     {
         static internal BookingModel ParseBooking(DataSnapshot bookingElements)
@@ -120,7 +121,6 @@ namespace Beachers.Droid
             updatedModelCallback.Invoke(data);
         }
     }
-
     public class BookingModelEventListener : Java.Lang.Object, IValueEventListener
     {
         private Action<BookingModel> updatedModelCallback;
@@ -141,6 +141,62 @@ namespace Beachers.Droid
         }
     }
 
+    static class GearModelParser
+    {
+        static internal GearModel ParseGear(DataSnapshot gearInventoryRoot)
+        {
+            GearModel outData = new GearModel();
+            foreach(DataSnapshot child in gearInventoryRoot.Children.ToEnumerable())
+            {
+                if(child.Key == "brand")
+                {
+                    outData.brand = (string)child.Value;
+                }
+
+                if(child.Key == "size")
+                {
+                    outData.size = (string)child.Value;
+                }
+
+                if(child.Key == "type")
+                {
+                    string typeVal = (string)child.Value;
+                    outData.type = typeVal == "Kite" ? GearType.Kite : GearType.Board;
+                }
+            }
+            return outData;
+        }
+    }
+
+    public class GearRecordsEventListener : Java.Lang.Object, IValueEventListener
+    {
+        private Action<GearRecords> updatedModelCallback;
+
+        public GearRecordsEventListener(Action<GearRecords> updatedModelCallback)
+        {
+            this.updatedModelCallback = updatedModelCallback;
+        }
+
+        public void OnCancelled(DatabaseError error)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnDataChange(DataSnapshot gearInventoryRoot)
+        {
+            GearRecords outData = new GearRecords((int)gearInventoryRoot.ChildrenCount);
+
+            foreach (DataSnapshot gearDescription in gearInventoryRoot.Children.ToEnumerable())
+            {
+                outData.Add(gearDescription.Key, GearModelParser.ParseGear(gearDescription));
+            }
+
+            updatedModelCallback.Invoke(outData);
+        }
+    }
+
+
+    // TODO: Implement 'Unregister' logic.
     public class FirebaseDB : IFirebaseDB
     {
         private const string urlFirebaseDB = "https://beachers-49bec.firebaseio.com";
@@ -162,13 +218,22 @@ namespace Beachers.Droid
             GetCurrentUserBookings().Child(bookingTimestamp).AddValueEventListener(bookingsListener);
         }
 
+        public void RegisterUserInventoryListener(object sender, Action<GearRecords> updateCallback)
+        {
+            var listener = new GearRecordsEventListener(updateCallback);
+            GetCurrentUserInventory().AddValueEventListener(listener);
+        }
+
         public void CreateNewBooking(string timestamp)
         {
             var bookings = GetCurrentUserBookings();
             bookings.Child(timestamp).SetValue("Hello");
         }
 
-
+        private DatabaseReference GetCurrentUserInventory()
+        {
+            return FirebaseDatabase.Instance.GetReferenceFromUrl($"{urlFirebaseDB}/Inventory/{FirebaseAuth.Instance.CurrentUser.Uid}/");
+        }
 
         private DatabaseReference GetCurrentUserBookings()
         {

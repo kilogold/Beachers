@@ -1,4 +1,5 @@
-﻿using Beachers.Services;
+﻿using Beachers.Models;
+using Beachers.Services;
 using Beachers.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,14 @@ using Xamarin.Forms.Xaml;
 
 namespace Beachers.Views
 {
+    using GearRecords = Dictionary<string, GearModel>;
+
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewBookingPage : ContentPage
     {
+        IFirebaseDB db;
+        GearRecords lastUpdatedGearRecords = null;
         Dictionary<string, Position> spotLocations = new Dictionary<string, Position>()
         {
             { "\"Event Site\" - Hood River, Oregon", new Position(45.715979, -121.512101) },
@@ -25,6 +31,10 @@ namespace Beachers.Views
         public NewBookingPage()
         {
             InitializeComponent();
+
+            db = DependencyService.Get<IFirebaseDB>();
+
+            db.RegisterUserInventoryListener(this, OnGearUpdated);
 
             DeploymentMap.Pins.Add(new Pin
             {
@@ -42,13 +52,54 @@ namespace Beachers.Views
             }
         }
 
+        private void OnGearUpdated(GearRecords gear)
+        {
+            lastUpdatedGearRecords = gear;
+
+            layoutGearLoadout.Children.Clear();
+
+            foreach (GearModel item in lastUpdatedGearRecords.Values)
+            {
+                var newLabel = new Label()
+                {
+                    Text = string.Format("{0}: {1} {2}", item.type, item.brand, item.size),
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    FontSize = 25
+                };
+
+
+                var gesture = new TapGestureRecognizer();
+                gesture.Tapped += Gesture_Tapped;
+                newLabel.GestureRecognizers.Add(gesture);
+
+
+                layoutGearLoadout.Children.Add(newLabel);
+            }
+        }
+
+        private void Gesture_Tapped(object sender, EventArgs e)
+        {
+            Label lblSender = sender as Label;
+
+            if(lblSender.BackgroundColor == Color.CornflowerBlue)
+            {
+                lblSender.BackgroundColor = Color.White;
+                lblSender.TextColor = Color.Default;
+            }
+            else
+            {
+                lblSender.BackgroundColor = Color.CornflowerBlue;
+                lblSender.TextColor = Color.White;
+            }
+        }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             var vm = BindingContext as NewBookingViewModel;
 
             DateTime final = vm.SelectedDate + vm.SelectedTime;
             string foo = final.ToUniversalTime().ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'");
-            DependencyService.Get<IFirebaseDB>().CreateNewBooking(foo);
+            db.CreateNewBooking(foo);
             await DisplayAlert("Booking Request", foo, "Ignore");
         }
 

@@ -6,6 +6,7 @@ using System.Text;
 namespace Beachers.Services
 {
     using BookingRecords = Dictionary<string, BookingModel>;
+    using GearRecords = Dictionary<string, GearModel>;
     public interface IFirebaseDB
     {
         void RegisterBookingsListener(object sender, Action<BookingRecords> recs, bool registerOnce);
@@ -13,5 +14,7 @@ namespace Beachers.Services
         void RegisterBookingSummaryListener(object sender, Action<BookingModel> updateCallback, string bookingTimestamp);
 
         void CreateNewBooking(string timestamp);
+
+        void RegisterUserInventoryListener(object sender, Action<GearRecords> updateCallback);
     }
 }

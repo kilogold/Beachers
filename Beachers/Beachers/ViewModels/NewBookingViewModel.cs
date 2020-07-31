@@ -16,8 +16,8 @@ namespace Beachers.ViewModels
 
         public NewBookingViewModel()
         {
-            MinDate = new DateTime(2018, 1, 1);
-            MaxDate = new DateTime(2018, 12, 31);
+            MinDate = DateTime.Today;
+            MaxDate = DateTime.Today.AddYears(1);
 
         }
     }
