@@ -27,7 +27,8 @@ namespace Beachers.Views
             Entries.Clear();
             foreach (string timestamp in bookingRecords.Keys)
             {
-                Entries.Add(DateTime.Parse(timestamp).Date.ToString("f"));
+                var dateTime = DateTime.Parse(timestamp).ToLocalTime();
+                Entries.Add(dateTime.ToString("f"));
             }
         }
 
