@@ -140,20 +140,35 @@ namespace Beachers.Droid
             GearModel outData = new GearModel();
             foreach(DataSnapshot child in gearInventoryRoot.Children.ToEnumerable())
             {
-                if(child.Key == "brand")
+                if (child.Key == "memo")
                 {
-                    outData.brand = (string)child.Value;
+                    outData.Memo = (string)child.Value;
+                    continue;
                 }
 
-                if(child.Key == "size")
+                if (child.Key == "brand")
                 {
-                    outData.size = (string)child.Value;
+                    outData.Brand = (string)child.Value;
+                    continue;
                 }
 
-                if(child.Key == "type")
+                if (child.Key == "size")
+                {
+                    outData.Size = (string)child.Value;
+                    continue;
+                }
+
+                if (child.Key == "model")
+                {
+                    outData.Model = (string)child.Value;
+                    continue;
+                }
+
+                if (child.Key == "type")
                 {
                     string typeVal = (string)child.Value;
-                    outData.type = typeVal == "Kite" ? GearType.Kite : GearType.Board;
+                    outData.Type = typeVal == "Kite" ? GearType.Kite : GearType.Board;
+                    continue;
                 }
             }
             return outData;

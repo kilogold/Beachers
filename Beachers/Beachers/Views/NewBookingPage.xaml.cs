@@ -83,7 +83,7 @@ namespace Beachers.Views
             {
                 var newLabel = new Label()
                 {
-                    Text = string.Format("{0}: {1} {2}", item.Value.type, item.Value.brand, item.Value.size),
+                    Text = string.Format("{0}: {1} {2}", item.Value.Type, item.Value.Brand, item.Value.Size),
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     FontSize = 25
                 };

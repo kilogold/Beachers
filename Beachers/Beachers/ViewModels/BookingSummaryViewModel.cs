@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
@@ -56,9 +57,41 @@ namespace Beachers.ViewModels
             DeploymentMap.Pins.Add(pin);
         }
 
+        public ObservableCollection<DeploymentGroup> GearDeployments { private set; get; } = new ObservableCollection<DeploymentGroup>();
+
+        private void UpdateGearDeploymentProperties()
+        {
+            // Early-out:
+            // These two caches are co-dependent. They both need to be available in order 
+            // to update UI views & controls.
+            if(cachedBookingModel == null || cachedUserGearInventory == null)
+            {
+                return;
+            }
+
+            GearDeployments.Clear();
+            for (int i = 0; i < cachedBookingModel.deployments.Length; i++)
+            {
+                int[] deploymentGearIndicies = cachedBookingModel.deployments[i];
+
+                var groupEntries = new DeploymentGroup(deploymentGearIndicies.Length, i);
+
+                foreach (int gearIndex in deploymentGearIndicies)
+                {
+                    string gearID = cachedBookingModel.gear[gearIndex];
+                    GearModel gearModel = cachedUserGearInventory[gearID];
+                    groupEntries.Add(gearModel);
+                }
+
+                GearDeployments.Add(groupEntries);
+            }
+
+        }
+
         private void OnUserGearInventoryUpdated(Dictionary<string, GearModel> obj)
         {
             cachedUserGearInventory = obj;
+            UpdateGearDeploymentProperties();
         }
 
         private void OnBookingModelUpdated(BookingModel updatedModel)
@@ -85,6 +118,8 @@ namespace Beachers.ViewModels
             DeploymentMap.Pins[0].Position = mapPosition;
             DeploymentMap.MoveToRegion(MapSpan.FromCenterAndRadius(mapPosition, Distance.FromMiles(1)));
             NotifyPropertyChanged("DeploymentMap");
+
+            UpdateGearDeploymentProperties();
         }
 
         // This method is called by the Set accessor of each property.  

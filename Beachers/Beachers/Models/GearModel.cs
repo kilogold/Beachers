@@ -12,9 +12,10 @@ namespace Beachers.Models
 
     public class GearModel
     {
-        public string brand;
-        public string memo;
-        public string size;
-        public GearType type;
+        public string Brand { get; set; }
+        public string Memo { get; set; }
+        public string Model { get; set; }
+        public string Size { get; set; }
+        public GearType Type { get; set; }
     }
 }

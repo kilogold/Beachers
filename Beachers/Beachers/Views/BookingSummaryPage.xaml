@@ -13,20 +13,29 @@
             <Label Text="{Binding BookingTimestamp, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="20" Margin="15"/>
             <Label Text="Deployments" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
             <ListView
-                   ItemsSource="{Binding GearList}"
+                   ItemsSource="{Binding GearDeployments}"
                    IsGroupingEnabled="true" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Brand, StringFormat='Brand: {0}'}"/>-->
+                        <TextCell Detail="{Binding Memo}">
+                            <TextCell.Text>
+                                <MultiBinding StringFormat="{}{0} {1}, {2}">
+                                    <Binding Path="Brand" />
+                                    <Binding Path="Model" />
+                                    <Binding Path="Size" />
+                                </MultiBinding>
+                            </TextCell.Text>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}"
+                        <TextCell Text="{Binding GroupName}"
                               TextColor="#f35e20"
                               DetailColor="#503026" />
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding type}" Detail="{Binding detail}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
             </ListView>
             <Label Text="Session Length" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
             <Label Text="{Binding SessionLength}" FontSize="20" Margin="15"/>
