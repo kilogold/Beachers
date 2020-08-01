@@ -8,7 +8,7 @@
              Title="Bookings">
     <ContentPage.Content>
         <StackLayout>
-            <Button Margin="20" Text="New Reservation"/>
+            <Button Margin="20" Text="New Reservation" Clicked="Reservation_Clicked"/>
             <Label Padding="10,0,0,0" HeightRequest="30" VerticalTextAlignment="Center" Text="Existing Reservations" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="#1690F4"/>
             <ListView x:Name="lstBookings"/>
         </StackLayout>

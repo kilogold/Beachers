@@ -13,7 +13,7 @@ namespace Beachers.Services
 
         void RegisterBookingSummaryListener(object sender, Action<BookingModel> updateCallback, string bookingTimestamp);
 
-        void CreateNewBooking(string timestamp);
+        void CreateNewBooking(string timestamp, BookingModel model);
 
         void RegisterUserInventoryListener(object sender, Action<GearRecords> updateCallback);
     }

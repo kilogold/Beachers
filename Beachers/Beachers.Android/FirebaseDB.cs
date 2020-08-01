@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Util;
 using Beachers.Models;
 using Beachers.Services;
 using Firebase.Auth;
 using Firebase.Database;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Java.Util;
 
 namespace Beachers.Droid
 {
@@ -224,10 +216,23 @@ namespace Beachers.Droid
             GetCurrentUserInventory().AddValueEventListener(listener);
         }
 
-        public void CreateNewBooking(string timestamp)
+        public void CreateNewBooking(string timestamp, BookingModel model)
         {
             var bookings = GetCurrentUserBookings();
-            bookings.Child(timestamp).SetValue("Hello");
+            var bookingDbEntry = bookings.Child(timestamp);
+
+            bookingDbEntry.Child("beacher").SetValue(model.beacherId);
+
+            for (int i = 0; i < model.deployments.Length; i++)
+            {
+                ArrayList lst = new ArrayList(model.deployments[i]);
+                bookingDbEntry.Child("deployments").Child(i.ToString()).SetValue(lst);
+            }
+
+            bookingDbEntry.Child("gear").SetValue(new ArrayList(model.gear));
+            bookingDbEntry.Child("lengthMinutes").SetValue(model.sessionLengthMinutes);
+            bookingDbEntry.Child("location").SetValue($"{model.location[0]},{model.location[1]}");
+
         }
 
         private DatabaseReference GetCurrentUserInventory()

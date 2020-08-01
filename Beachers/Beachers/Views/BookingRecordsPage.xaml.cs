@@ -35,5 +35,10 @@ namespace Beachers.Views
 
             lstBookings.SelectedItem = null;
         }
+
+        private void Reservation_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NavigationPage(new NewBookingPage()));
+        }
     }
 }
