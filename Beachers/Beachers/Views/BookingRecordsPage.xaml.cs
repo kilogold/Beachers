@@ -11,24 +11,24 @@ namespace Beachers.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingRecordsPage : ContentPage
     {
+        public ObservableCollection<string> Entries { get; private set; } = new ObservableCollection<string>();
+
         public BookingRecordsPage()
         {
             InitializeComponent();
             var db = DependencyService.Get<IFirebaseDB>();
             db.RegisterBookingsListener(this, OnBookingRecordsUpdated, false);
             lstBookings.ItemSelected += OnItemSelected;
+            BindingContext = this;
         }
 
         private void OnBookingRecordsUpdated(Dictionary<string, BookingModel> bookingRecords)
         {
-            string[] reformattedDates = new string[bookingRecords.Keys.Count];
-            bookingRecords.Keys.CopyTo(reformattedDates, 0);
-
-            for (int i = 0; i < reformattedDates.Length; i++)
+            Entries.Clear();
+            foreach (string timestamp in bookingRecords.Keys)
             {
-                reformattedDates[i] = DateTime.Parse(reformattedDates[i]).Date.ToString("f");
+                Entries.Add(DateTime.Parse(timestamp).Date.ToString("f"));
             }
-            lstBookings.ItemsSource = reformattedDates;
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
