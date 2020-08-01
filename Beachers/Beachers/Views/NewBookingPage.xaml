@@ -32,11 +32,11 @@
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Column="0">
                         <Label Text="Session End" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                        <TimePicker />
+                        <TimePicker Time="{Binding SessionEndTime}" />
                     </StackLayout>
                     <StackLayout Grid.Column="2">
-                        <Label Text="Session Length" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                        <Entry Keyboard="Numeric">
+                        <Label Text="Session Length (Minutes)" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                        <Entry Keyboard="Numeric" x:Name="SessionMins">
                             <Entry.Behaviors>
                                 <local:NumericValidationBehavior />
                             </Entry.Behaviors>

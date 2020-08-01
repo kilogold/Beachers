@@ -48,6 +48,8 @@ namespace Beachers.Views
         {
             InitializeComponent();
 
+            SessionMins.SetBinding(Editor.TextProperty, "SessionLengthMinutes");
+
             db = DependencyService.Get<IFirebaseDB>();
 
             db.RegisterUserInventoryListener(this, OnGearUpdated);
@@ -173,7 +175,7 @@ namespace Beachers.Views
             model.gear = GetSelectedGearIds();
             model.deployments = CalculateDeployments(model.gear);
             model.location = new float[] { (float)DeploymentMap.Pins[0].Position.Longitude, (float)DeploymentMap.Pins[0].Position.Latitude };
-            model.sessionLengthMinutes = 10;
+            model.sessionLengthMinutes = int.Parse(SessionMins.Text);
 
             return model;
         }
