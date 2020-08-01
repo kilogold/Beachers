@@ -17,7 +17,6 @@
                    IsGroupingEnabled="true" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <!--<TextCell Text="{Binding Brand, StringFormat='Brand: {0}'}"/>-->
                         <TextCell Detail="{Binding Memo}">
                             <TextCell.Text>
                                 <MultiBinding StringFormat="{}{0} {1}, {2}">
