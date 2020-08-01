@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Beachers.Models;
 using Beachers.Services;
+using Beachers.Utils;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -39,7 +40,8 @@ namespace Beachers.ViewModels
         {
             this.BookingTimestamp = DateTime.Parse(bookingTimestamp);
             var db = DependencyService.Get<IFirebaseDB>();
-            db.RegisterBookingSummaryListener(this, OnBookingModelUpdated, bookingTimestamp);
+            string dbKey = StringOperations.ToUTCFormat(BookingTimestamp.ToUniversalTime());
+            db.RegisterBookingSummaryListener(this, OnBookingModelUpdated, dbKey);
             db.RegisterUserInventoryListener(this, OnUserGearInventoryUpdated);
 
             Pin pin = new Pin

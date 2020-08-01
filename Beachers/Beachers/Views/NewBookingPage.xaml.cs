@@ -1,5 +1,6 @@
 ﻿using Beachers.Models;
 using Beachers.Services;
+using Beachers.Utils;
 using Beachers.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -182,7 +183,7 @@ namespace Beachers.Views
             var vm = BindingContext as NewBookingViewModel;
 
             DateTime final = vm.SelectedDate + vm.SelectedTime;
-            string reservationTimeStamp = final.ToUniversalTime().ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'");
+            string reservationTimeStamp = StringOperations.ToUTCFormat(final.ToUniversalTime());
             
             db.CreateNewBooking(reservationTimeStamp, GenerateBookingModel());
             Device.BeginInvokeOnMainThread(async () => await Navigation.PopAsync());
