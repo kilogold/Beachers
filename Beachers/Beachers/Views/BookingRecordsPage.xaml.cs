@@ -2,12 +2,10 @@
 using Beachers.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 namespace Beachers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -17,13 +15,20 @@ namespace Beachers.Views
         {
             InitializeComponent();
             var db = DependencyService.Get<IFirebaseDB>();
-            db.RegisterBookingsListener(this, something, true);
+            db.RegisterBookingsListener(this, OnBookingRecordsUpdated, false);
             lstBookings.ItemSelected += OnItemSelected;
         }
 
-        private void something(Dictionary<string, BookingModel> obj)
+        private void OnBookingRecordsUpdated(Dictionary<string, BookingModel> bookingRecords)
         {
-            lstBookings.ItemsSource = obj.Keys;
+            string[] reformattedDates = new string[bookingRecords.Keys.Count];
+            bookingRecords.Keys.CopyTo(reformattedDates, 0);
+
+            for (int i = 0; i < reformattedDates.Length; i++)
+            {
+                reformattedDates[i] = DateTime.Parse(reformattedDates[i]).Date.ToString("f");
+            }
+            lstBookings.ItemsSource = reformattedDates;
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -31,14 +36,15 @@ namespace Beachers.Views
             if (lstBookings.SelectedItem == null)
                 return;
 
-            Navigation.PushAsync(new NavigationPage(new BookingSummaryPage()));
+            string timestamp = lstBookings.SelectedItem as string;
+            Navigation.PushAsync(new NavigationPage(new BookingSummaryPage(timestamp)));
 
             lstBookings.SelectedItem = null;
         }
 
-        private void Reservation_Clicked(object sender, EventArgs e)
+        private async void Reservation_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NavigationPage(new NewBookingPage()));
+            await Navigation.PushAsync(new NewBookingPage());
         }
     }
 }

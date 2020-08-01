@@ -185,8 +185,8 @@ namespace Beachers.Views
             string reservationTimeStamp = final.ToUniversalTime().ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'");
             
             db.CreateNewBooking(reservationTimeStamp, GenerateBookingModel());
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PopAsync());
             await DisplayAlert("Booking Request", "Reservation has been created.", "OK");
-            await Navigation.PopAsync();
         }
 
         private void RadioButton_Clicked(object sender, CheckedChangedEventArgs e)

@@ -5,11 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
-             x:Class="Beachers.BookingSummaryPage">
+             x:Class="Beachers.BookingSummaryPage"
+             Title="Booking Summary">
     <ContentPage.Content>
         <StackLayout Padding="20, 10"  Grid.Row="0" x:Name="listviewname">
             <Label Text="Date" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-            <Label Text="Aug. 24, 2020" FontSize="20" Margin="15"/>
+            <Label Text="{Binding BookingTimestamp, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="20" Margin="15"/>
             <Label Text="Deployments" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand"/>
             <ListView
                    ItemsSource="{Binding GearList}"

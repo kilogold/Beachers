@@ -13,10 +13,10 @@ namespace Beachers
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingSummaryPage : ContentPage, INotifyPropertyChanged
     {
-        public BookingSummaryPage()
+        public BookingSummaryPage(string timestamp)
         {
             InitializeComponent();
-            BindingContext = new BookingSummaryViewModel("2020-08-24T15:30:00Z");
+            BindingContext = new BookingSummaryViewModel(timestamp);
         }
     }
 }
