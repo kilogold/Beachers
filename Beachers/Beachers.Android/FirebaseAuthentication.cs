@@ -50,16 +50,21 @@ namespace Beachers.Droid
                 var token = await user.User.GetIdTokenAsync(false);
                 return token.Token;
             }
-            catch (FirebaseAuthInvalidUserException e)
+            catch (FirebaseAuthException e)
             {
                 e.PrintStackTrace();
-                return string.Empty;
+                return $"Error: {e.Message}";
             }
-            catch (FirebaseAuthInvalidCredentialsException e)
-            {
-                e.PrintStackTrace();
-                return string.Empty;
-            }
+            //catch (FirebaseAuthInvalidUserException e)
+            //{
+            //    e.PrintStackTrace();
+            //    return $"Error: {e.Message}";
+            //}
+            //catch (FirebaseAuthInvalidCredentialsException e)
+            //{
+            //    e.PrintStackTrace();
+            //    return $"Error: {e.Message}";
+            //}
         }
 
         public async Task UpateProfile(string displayName, string photoURI)

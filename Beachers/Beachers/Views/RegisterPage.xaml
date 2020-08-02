@@ -8,14 +8,11 @@
              Title="Register">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Entry Margin="20" Placeholder="First Name" Text="Alex" IsPassword="False" x:Name="fName"/>
-            <Entry Margin="20" Placeholder="Last Name" Text="Bonilla" IsPassword="False" x:Name="lName"/>
-            <Entry Margin="20" Placeholder="Phone Number" Text="7876476857" IsPassword="False" x:Name="phone"/>
-            <Entry Margin="20" Placeholder="Email" Text="goa@aol.com" IsPassword="False" x:Name="email"/>
-            <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
+            <Entry Margin="20" Placeholder="First Name" IsPassword="False" x:Name="fName"/>
+            <Entry Margin="20" Placeholder="Last Name" IsPassword="False" x:Name="lName"/>
+            <Entry Margin="20" Placeholder="Phone Number" IsPassword="False" Keyboard="Numeric" x:Name="phone"/>
+            <Entry Margin="20" Placeholder="Email" IsPassword="False" x:Name="email"/>
+            <Entry Margin="20" Placeholder="Password" IsPassword="False" x:Name="password"/>
             <Button Margin="20" Text="Register" Clicked="Button_Clicked" x:Name="btnRegister"></Button>
         </StackLayout>
     </ContentPage.Content>

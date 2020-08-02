@@ -22,7 +22,15 @@ namespace Beachers.Views
         {
             btnRegister.IsEnabled = false;
             var auth = DependencyService.Get<IFirebaseAuthentication>();
-            await auth.RegisterWithEmailAndPassword(email.Text, password.Text);
+            string token = await auth.RegisterWithEmailAndPassword(email.Text, password.Text);
+
+            const string ErrorPrefix = "Error:";
+            if (token.StartsWith(ErrorPrefix))
+            {
+                await DisplayAlert("Registration Error", token.Substring(ErrorPrefix.Length), "OK");
+                btnRegister.IsEnabled = true;
+                return;
+            }
             await auth.UpateProfile(fName.Text, null);
             btnRegister.IsEnabled = true;
             await DisplayAlert("Registration Successful!", "Please log in with your exiting account.", "OK");
