@@ -16,5 +16,7 @@ namespace Beachers.Services
         void CreateNewBooking(string timestamp, BookingModel model);
 
         void RegisterUserInventoryListener(object sender, Action<GearRecords> updateCallback);
+
+        void RegisterNewGear(GearModel model);
     }
 }

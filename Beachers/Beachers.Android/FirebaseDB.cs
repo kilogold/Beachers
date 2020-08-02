@@ -57,7 +57,6 @@ namespace Beachers.Droid
             }
             return model;
         }
-
         static internal string[] ParseGear(DataSnapshot gear)
         {
             string[] gearListing = new string[gear.ChildrenCount];
@@ -69,7 +68,6 @@ namespace Beachers.Droid
 
             return gearListing;
         }
-
         static internal int[][] ParseDeployments(DataSnapshot deployments)
         {
             int[][] deploymentIndices = new int[deployments.ChildrenCount][];
@@ -237,17 +235,26 @@ namespace Beachers.Droid
             var bookingDbEntry = bookings.Child(timestamp);
 
             bookingDbEntry.Child("beacher").SetValue(model.beacherId);
-
             for (int i = 0; i < model.deployments.Length; i++)
             {
                 ArrayList lst = new ArrayList(model.deployments[i]);
                 bookingDbEntry.Child("deployments").Child(i.ToString()).SetValue(lst);
             }
-
             bookingDbEntry.Child("gear").SetValue(new ArrayList(model.gear));
             bookingDbEntry.Child("lengthMinutes").SetValue(model.sessionLengthMinutes);
             bookingDbEntry.Child("location").SetValue($"{model.location[0]},{model.location[1]}");
+        }
 
+        public void RegisterNewGear(GearModel model)
+        {
+            var data = new Dictionary<string, Java.Lang.Object>();
+            
+            data.Add("brand", model.Brand);
+            data.Add("memo", model.Memo);
+            data.Add("model", model.Model);
+            data.Add("size", model.Size);
+            data.Add("type", model.Type.ToString());
+            GetCurrentUserInventory().Push().UpdateChildren(data);
         }
 
         private DatabaseReference GetCurrentUserInventory()

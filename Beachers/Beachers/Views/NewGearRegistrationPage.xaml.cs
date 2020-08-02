@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Beachers.Models;
+using Beachers.Services;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -31,7 +29,16 @@ namespace Beachers.Views
                 return;
             }
 
+            var model = new GearModel();
+            model.Brand = txtBrand.Text;
+            model.Memo = txtMemo.Text;
+            model.Model = txtModel.Text;
+            model.Size = txtSize.Text;
+            model.Type = ((string)cmbGearType.SelectedItem) == GearTypes[0] ? GearType.Kite : GearType.Board;
+            DependencyService.Get<IFirebaseDB>().RegisterNewGear(model);
 
+            await DisplayAlert("New Gear Registered", "Your gear is now registered. You may select it in your booking.\nGear-shipping feature coming soon.", "OK");
+            await Navigation.PopAsync();
         }
     }
 }
