@@ -10,7 +10,8 @@ namespace Beachers.Models
         About,
         Booking,
         Login,
-        Logout
+        Logout,
+        Inventory
     }
     public class HomeMenuItem
     {

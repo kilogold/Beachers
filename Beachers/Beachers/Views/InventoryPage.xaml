@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Beachers.Views.InventoryPage"
+             Title="Inventory">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Actions" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+
+            <Grid>
+                <Button Margin="5" Grid.Column="0" Text="Register New Gear"/>
+                <Button Margin="5"  Grid.Column="1" Text="Return My Gear"/>
+            </Grid>
+            <Label Text="My Gear" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+            <ListView ItemsSource="{Binding UserInventory}"
+                      IsGroupingEnabled="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding Memo}">
+                            <TextCell.Text>
+                                <MultiBinding StringFormat="{}{0} {1}, {2}">
+                                    <Binding Path="Brand" />
+                                    <Binding Path="Model" />
+                                    <Binding Path="Size" />
+                                </MultiBinding>
+                            </TextCell.Text>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

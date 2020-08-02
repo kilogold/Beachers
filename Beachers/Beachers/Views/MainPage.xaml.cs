@@ -29,6 +29,9 @@ namespace Beachers.Views
             {
                 switch (id)
                 {
+                    case (int)MenuItemType.Inventory:
+                        MenuPages.Add(id, new NavigationPage(new InventoryPage()));
+                        break;
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
