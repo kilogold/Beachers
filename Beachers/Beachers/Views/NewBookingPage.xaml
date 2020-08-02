@@ -45,7 +45,7 @@
                     <Label Grid.Column="1" Text="OR" TextDecorations="Underline"  VerticalTextAlignment="Top" HorizontalTextAlignment="Center"/>
                 </Grid>
                 <Label Text="Location" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                <maps:Map x:Name="DeploymentMap" MapType="Hybrid"  HasScrollEnabled="False"/>
+                <maps:Map x:Name="DeploymentMap" MapType="Hybrid"  HasScrollEnabled="False" HeightRequest="300"/>
                 <StackLayout x:Name="layoutRadioButtons"/>
                 <Label Text="Gear" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
                 <StackLayout x:Name="layoutGearLoadout"/>
