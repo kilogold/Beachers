@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Beachers.Utils"
+             mc:Ignorable="d"
+             x:Class="Beachers.Views.NewGearRegistrationPage"
+             Title="New Gear Registration">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Margin="4,15,0,10" Text="Please fill out your gear's information to proceed." HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+
+            <Picker x:Name="cmbGearType" Title="Gear Type" ItemsSource="{Binding GearTypes}"/>
+            <Entry x:Name="txtBrand" Placeholder="Brand"/>
+            <Entry x:Name="txtModel" Placeholder="Model"/>
+            <Entry x:Name="txtSize" Placeholder="Size" Keyboard="Numeric"/>
+            <Entry x:Name="txtMemo" Placeholder="Memo"/>
+
+            <Label Margin="4,15,0,10" Text="We'll need a few pictures of your gear, to better identify your belongings." HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+            <Image Source="{local:ImageResource Beachers.Embed.Camera.png}" HeightRequest="64" />
+            <Label Text="(Coming Soon)" HorizontalOptions="Center"/>
+
+            <Button Text="Register" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

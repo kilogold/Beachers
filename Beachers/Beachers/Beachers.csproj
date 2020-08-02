@@ -11,6 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Embed\Camera.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Embed\Camera.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1179" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />  
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.1179" />
@@ -48,6 +56,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NewBookingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewGearRegistrationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RegisterPage.xaml">

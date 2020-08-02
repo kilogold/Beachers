@@ -11,7 +11,7 @@
             <Label Text="Actions" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
 
             <Grid>
-                <Button Margin="5" Grid.Column="0" Text="Register New Gear"/>
+                <Button Margin="5" Grid.Column="0" Text="Register New Gear" Clicked="Button_Clicked"/>
                 <Button Margin="5"  Grid.Column="1" Text="Return My Gear"/>
             </Grid>
             <Label Text="My Gear" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
