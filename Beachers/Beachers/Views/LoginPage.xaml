@@ -8,10 +8,10 @@
              Title="Login">
         <StackLayout VerticalOptions="Fill">
             <StackLayout VerticalOptions="Start">
-                <Entry Margin="20" Placeholder="Email" Text="kelvin@ramenvr.com"  IsPassword="False" x:Name="email"/>
-                <Entry Margin="20" Placeholder="Password" Text="159159" IsPassword="True" x:Name="password"/>
+                <Entry Margin="20" Placeholder="Email" IsPassword="False" x:Name="email"/>
+                <Entry Margin="20" Placeholder="Password" IsPassword="True" x:Name="password"/>
             <StackLayout Margin="20" Orientation="Horizontal">
-                <CheckBox x:Name="chkRememberMe" IsChecked="True" />
+                <CheckBox x:Name="chkRememberMe"/>
                 <Label Text="Remember Me" FontSize="20">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>

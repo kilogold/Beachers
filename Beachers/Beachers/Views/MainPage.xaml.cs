@@ -23,6 +23,11 @@ namespace Beachers.Views
             MasterBehavior = MasterBehavior.Popover;
         }
 
+        public async Task NavigateFromMenu(MenuItemType id)
+        {
+            await NavigateFromMenu((int)id);
+        }
+
         public async Task NavigateFromMenu(int id)
         {
             if (!MenuPages.ContainsKey(id))
