@@ -4,19 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Beachers.Views.InventoryPage"
-             Title="Inventory">
+             x:Class="Beachers.Views.ReturnGearPage"
+             Title="Gear Returns">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Actions" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-
-            <Grid>
-                <Button Margin="5" Grid.Column="0" Text="Register New Gear" Clicked="RegisterNewGear_Clicked"/>
-                <Button Margin="5"  Grid.Column="1" Text="Return My Gear" Clicked="ReturnGear_Clicked"/>
-            </Grid>
-            <Label Text="My Gear" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+            <Label Text="Select an item you wish to process a return for."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
             <ListView ItemsSource="{Binding UserInventory}"
-                      IsGroupingEnabled="False">
+                      IsGroupingEnabled="False"
+                      ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Detail="{Binding Memo}">
@@ -30,7 +27,6 @@
                         </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
         </StackLayout>
     </ContentPage.Content>

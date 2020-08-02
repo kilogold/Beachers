@@ -257,6 +257,11 @@ namespace Beachers.Droid
             GetCurrentUserInventory().Push().UpdateChildren(data);
         }
 
+        public void RemoveGearFromInventory(string gearId)
+        {
+            GetCurrentUserInventory().Child(gearId).SetValue(null);
+        }
+
         private DatabaseReference GetCurrentUserInventory()
         {
             return FirebaseDatabase.Instance.GetReferenceFromUrl($"{urlFirebaseDB}/Inventory/{FirebaseAuth.Instance.CurrentUser.Uid}/");

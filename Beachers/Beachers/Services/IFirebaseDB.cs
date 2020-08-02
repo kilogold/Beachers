@@ -18,5 +18,8 @@ namespace Beachers.Services
         void RegisterUserInventoryListener(object sender, Action<GearRecords> updateCallback);
 
         void RegisterNewGear(GearModel model);
+
+        void RemoveGearFromInventory(string gearId);
+
     }
 }

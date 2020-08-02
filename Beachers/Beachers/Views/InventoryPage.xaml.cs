@@ -19,9 +19,14 @@ namespace Beachers.Views
             BindingContext = new InventoryViewModel();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void RegisterNewGear_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NewGearRegistrationPage());
+        }
+
+        private async void ReturnGear_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ReturnGearPage());
         }
     }
 }
