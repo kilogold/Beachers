@@ -76,7 +76,7 @@
                         TextColor="White" />
                 <StackLayout Margin="0,50,0,0">
                     <Label Text="{Binding UserFirstName, StringFormat='Welcome, {0}!'}" FontSize="Large" HorizontalOptions="Center"/>
-                    <Label Text="To get started, check out the top-right menu of this screen. You'll want to do things in the following order:"/>
+                    <Label Text="To get started, check out the top-left menu of this screen. You'll want to do things in the following order:"/>
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
